@@ -9,14 +9,17 @@ public class Student extends Person {
     private String matNr;
     private String studySubject;
 
+    // Empty constructor required by Spring
     public Student() {}
 
+    // Constructor with parameters
     public Student(String firstName, String lastName, String email, String matNr, String studySubject) {
         super(firstName, lastName, email);
         this.matNr = matNr;
         this.studySubject = studySubject;
     }
 
+    // Getter and setter methods
     public String getMatNr() {
         return matNr;
     }

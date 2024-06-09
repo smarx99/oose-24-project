@@ -56,6 +56,6 @@ public class EmployeeController {
         model.addAttribute("sort_by", sortBy);
         model.addAttribute("sort_asc", sortAsc);
 
-        return "employees"; // This should correspond to the view name, e.g., employees.html in templates
+        return "employees";
     }
 }
