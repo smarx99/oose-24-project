@@ -1,12 +1,21 @@
 package com.sse.ooseproject.models;
 
 import jakarta.persistence.*;
+import java.util.List;
+
 
 @Entity
 @Table(name = "employee")
 public class Employee extends Person {
     private String staffNr;
     private boolean isProfessor;
+
+    @ManyToOne
+    @JoinColumn(name = "university_id")
+    private University university;
+
+    @OneToMany(mappedBy = "employee")
+    private List<TeachingShift> teachingShifts;
 
     // Empty constructor required by Spring
     public Employee() {}
@@ -33,6 +42,14 @@ public class Employee extends Person {
 
     public void setIsProfessor(boolean isProfessor) {
         this.isProfessor = isProfessor;
+    }
+
+    public List<TeachingShift> getTeachingShifts() {
+        return teachingShifts;
+    }
+
+    public void setTeachingShifts(List<TeachingShift> teachingShifts) {
+        this.teachingShifts = teachingShifts;
     }
 }
 
