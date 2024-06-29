@@ -21,6 +21,10 @@ public class Course {
     @OneToMany(mappedBy = "course")
     private List<TeachingShift> teachingShifts;
 
+    @ManyToOne
+    @JoinColumn(name = "chair_id")
+    private Chair chair;
+
     public Course() {}
 
     public Course(String name) {
@@ -66,5 +70,13 @@ public class Course {
 
     public void setTeachingShifts(List<TeachingShift> teachingShifts) {
         this.teachingShifts = teachingShifts;
+    }
+
+    public Chair getChair() {
+        return chair;
+    }
+
+    public void setChair(Chair chair) {
+        this.chair = chair;
     }
 }

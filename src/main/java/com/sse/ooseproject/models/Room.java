@@ -14,7 +14,7 @@ public class Room {
     private String number;
 
     @Column(name = "number_of_seats")
-    private Integer seats = 0;  // Default value to avoid null assignment
+    private Integer seats;
 
     @Column(name = "is_auditorium")
     private boolean isAuditorium;
@@ -44,11 +44,9 @@ public class Room {
         this.number = number;
     }
 
-    public Integer getSeats() {
-        return seats != null ? seats : 0; // Return default value if null
-    }
+    public Integer getSeats() { return seats; }
 
-    public void setSeats(int seats) {
+    public void setSeats(Integer seats) {
         this.seats = seats;
     }
 
